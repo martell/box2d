@@ -16,6 +16,11 @@ option(BOX2D_BUILD_EXAMPLES "Build Box2D examples" OFF)
 
 set(BOX2D_VERSION 2.3.0)
 
+
+if(IOS)
+SET (CMAKE_OSX_ARCHITECTURES "$$(ARCHS_UNIVERSAL_IPHONE_OS)")
+endif()
+
 # The Box2D library.
 add_subdirectory(Box2D)
 
